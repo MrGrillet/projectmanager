@@ -35,8 +35,8 @@ class ConfirmationsController < Milia::ConfirmationsController
       self.resource = resource_class.confirm_by_token(params[:confirmation_token])
       yield resource if block_given?
 
-      if resrource.errors.empty?
-      	set_flash_message(:notice, :confirmed) if is_flashing_format?
+      if resource.errors.empty?
+        set_flash_message(:notice, :confirmed) if is_flashing_format?
       end
 
       if @confirmable.skip_confirm_change_password
