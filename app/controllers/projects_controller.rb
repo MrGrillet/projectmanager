@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project_user.save
-        fotmat.html { redirect_to users_tenant_project_url(id: @project.id, tenant_id: @project.tenant_id), notice: "User successfully added to project" }
+        format.html { redirect_to users_tenant_project_url(id: @project.id, tenant_id: @project.tenant_id), notice: "User successfully added to project" }
       else
         format.html { redirect_to users_tenant_project_url(id: @project.id, tenant_id: @project.tenant_id), error: "User not added to project" }
       end
